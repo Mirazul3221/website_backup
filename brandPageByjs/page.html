@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="p-20">
+    <div class="header">
+      <p class="brand text-center text-5xl">BRANDS</p>
+      <div class="flex justify-end translate-y-[-50%]">
+        <img class="md:w-48" src="./images/hsa-fsa.png" alt="">
+      </div>
+    </div>
+
+    <div class="brand_container ">
+
+    </div>
+  </div>
+  <img src="" alt="">
+
+  <script>
+    let brand_container = document.querySelector(".brand_container");
+
+    const brandData = [
+      {
+        brandImage: './images/brand_level_01.png',
+        brandName: 'COSTA DEL MAR',
+        brandContent: 'Discover Sunglasses, Goggles, Apparel, and More Available at the Oakley Official Website. Make your order now and receive free shipping!'
+      },
+      {
+        brandImage: './images/brand_level_02.png',
+        brandName: 'OAKLEY',
+        brandContent: 'Discover Sunglasses, Goggles, Apparel, and More Available at the Oakley Official Website. Make your order now and receive free shipping!'
+      }, {
+        brandImage: './images/brand_level_03.png',
+        brandName: 'Ray Ban',
+        brandContent: 'Discover Sunglasses, Goggles, Apparel, and More Available at the Oakley Official Website. Make your order now and receive free shipping!'
+      }
+    ]
+
+    const createContainer = (item) => {
+      const createDiv = document.createElement('div');
+      createDiv.className = "new_container";
+      const img = document.createElement('img');
+      const heading = document.createElement('h2');
+      const pra = document.createElement("p");
+      brand_container.appendChild(createDiv);
+
+
+      // ==========view data from arrey========
+      img.src = item.brandImage;
+      heading.innerHTML = item.brandName;
+      pra.innerHTML = item.brandContent;
+
+
+
+      createDiv.appendChild(img);
+      createDiv.appendChild(heading);
+      createDiv.appendChild(pra);
+
+    }
+
+    for (let newBrand of brandData) {
+      createContainer(newBrand);
+    }
+
+    // createContainer();
+  </script>
+</body>
+
+</html>
